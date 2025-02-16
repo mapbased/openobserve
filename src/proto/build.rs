@@ -55,6 +55,7 @@ fn main() -> Result<()> {
         .type_attribute("ScanStats", "#[derive(serde::Serialize)]")
         .extern_path(".datafusion_common", "::datafusion_proto::protobuf")
         .extern_path(".datafusion", "::datafusion_proto::protobuf")
+        .protoc_arg("--experimental_allow_proto3_optional")
         .compile(
             &[
                 "proto/cluster/common.proto",
